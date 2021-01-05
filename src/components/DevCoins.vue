@@ -49,7 +49,7 @@ export default {
     }
 
     .amount {
-        font-weight: 600;
+        font-weight: 700;
         font-size: 1.5rem;
     }
 }

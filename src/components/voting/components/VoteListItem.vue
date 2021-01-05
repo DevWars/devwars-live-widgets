@@ -46,7 +46,7 @@ export default {
 
         span {
             margin-left: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
         }
     }
 }

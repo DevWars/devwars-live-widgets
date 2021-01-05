@@ -67,7 +67,7 @@ img {
     --red: #ff007d;
     --bonus: #ffb04a;
 
-    --fontFamily: 'IBM Plex Sans', sans-serif;
+    --fontFamily: 'Roboto', sans-serif;
 }
 
 body {

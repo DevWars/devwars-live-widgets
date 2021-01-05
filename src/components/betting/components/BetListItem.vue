@@ -45,7 +45,7 @@ export default {
     .amount {
         width: 20%;
         color: var(--bonus);
-        font-weight: 600;
+        font-weight: 700;
     }
 
     .main {
@@ -69,7 +69,7 @@ export default {
 
         span {
             margin-left: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
         }
     }
 }

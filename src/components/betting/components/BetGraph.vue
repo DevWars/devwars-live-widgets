@@ -2,13 +2,17 @@
     <div class="BetGraph">
         <div
             v-for="option in options"
-            :key="option.option"
+            :key="option.name"
             class="bar"
-            :class="option.option"
+            :class="option.name"
             :style="{
-                height: ((option.total / total * 100) || 0) + '%'
+                width: ((option.total / total * 100) || 0) + '%'
             }"
-        ></div>
+        >
+            <span v-show="option.ratio" class="ratio">
+                <span>x</span>{{ parseFloat(option.ratio.toFixed(1)) }}
+            </span>
+        </div>
     </div>
 </template>
 
@@ -30,25 +34,41 @@ export default {
 <style lang="scss" scoped>
 .BetGraph {
     display: flex;
+    flex-direction: column;
     align-items: flex-end;
-    height: 3rem;
+    width: 7rem;
 
     .bar {
-        width: 0.75rem;
-        min-height: 1px;
+        height: 0.75rem;
+        min-width: 1px;
         background-color: #fff;
-        transition: height 500ms ease;
+        transition: width 500ms ease;
+        position: relative;
 
         &:not(:last-child) {
-            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
         }
 
         &.blue {
             background-color: var(--blue);
+            color: var(--blue);
         }
 
         &.red {
             background-color: var(--red);
+            color: var(--red);
+        }
+
+        .ratio {
+            position: absolute;
+            right: calc(100% + 0.5rem);
+            top: 50%;
+            transform: translateY(-50%);
+            color: #fff;
+
+            span {
+                font-size: 0.8rem;
+            }
         }
     }
 }

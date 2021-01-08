@@ -10,6 +10,8 @@
 
 
 <script>
+import { formatLargeNumber } from '../../../utils/formatting';
+
 export default {
     name: 'BetListItem',
 
@@ -19,12 +21,7 @@ export default {
 
     computed: {
         amount() {
-            const amount = this.bet.amount;
-            if (Math.abs(amount) > 999) {
-                return Math.sign(amount) * ((Math.abs(amount) / 1000).toFixed(1)) + 'k';
-            } else {
-                return Math.sign(amount) * Math.abs(amount);
-            }
+            return formatLargeNumber(this.bet.amount);
         },
 
         username() {

@@ -23,16 +23,24 @@
             ></path>
         </svg>
 
-        <div class="amount">{{ amount.toLocaleString() }}</div>
+        <div class="amount">{{ coins }}</div>
     </div>
 </template>
 
 <script>
+import { formatLargeNumber } from '../utils/formatting';
+
 export default {
     name: 'DevCoins',
 
     props: {
         amount: { type: Number, default: 0 },
+    },
+
+    computed: {
+        coins() {
+            return formatLargeNumber(this.amount);
+        },
     },
 };
 </script>
@@ -43,7 +51,7 @@ export default {
     align-items: center;
 
     .icon {
-        height: 2rem;
+        height: 1.75rem;
         margin-right: 0.5rem;
         fill: var(--bonus);
     }

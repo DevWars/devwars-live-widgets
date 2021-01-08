@@ -46,8 +46,8 @@ export default {
         margin-top: 1rem;
 
         h4 {
+            margin-bottom: 0.25rem;
             text-transform: uppercase;
-            font-style: italic;
             color: var(--fg40);
         }
     }
@@ -80,6 +80,10 @@ export default {
     .BetList {
         height: 100%;
         margin-top: 1rem;
+    }
+
+    .BetGraph {
+        margin-top: 0.25rem;
     }
 
     .overlay {

@@ -77,11 +77,24 @@ export default {
 
         .command {
             display: inline-block;
-            background-color: #27102b;
-            color: var(--red);
+            color: var(--blue);
             padding: 2px 4px;
             border-radius: 5px;
             font-family: monospace;
+            position: relative;
+            overflow: hidden;
+
+            &:before {
+                content: '';
+                display: block;
+                background-color: var(--blue);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0.1;
+            }
         }
     }
 
